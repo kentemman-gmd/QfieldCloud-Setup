@@ -21,6 +21,9 @@ wget https://raw.githubusercontent.com/kentemman-gmd/QfieldCloud-Setup/refs/head
 and run
 
 ```bash
+sudo chmod +x setup.sh
+```
+```bash
 ./setup.sh
 ```
 ### Step 2: Edit the `.env` File
