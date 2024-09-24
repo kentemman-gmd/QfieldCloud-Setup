@@ -28,7 +28,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Step 1: Clone the repository with submodules
 echo "Cloning the repository..."
 sudo git clone --recurse-submodules https://github.com/opengisch/QFieldCloud.git
-cd QFieldCloud || exit
+cd QFieldCloud
 
 # Step 2: Pull the latest changes and update submodules
 echo "Updating submodules..."
