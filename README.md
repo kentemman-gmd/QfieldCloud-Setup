@@ -18,14 +18,13 @@ Use the following `wget` command to download the script:
 ```bash
 wget https://raw.githubusercontent.com/kentemman-gmd/QfieldCloud-Setup/refs/heads/main/setup.sh -O setup.sh
 ```
-and run
+Make the script executable and run it:
 
 ```bash
 sudo chmod +x setup.sh
-```
-```bash
 ./setup.sh
 ```
+Navigate to the QFieldCloud directory:
 ```bash
 cd QFieldCloud
 ```
