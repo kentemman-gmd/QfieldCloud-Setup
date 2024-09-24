@@ -26,6 +26,9 @@ sudo chmod +x setup.sh
 ```bash
 ./setup.sh
 ```
+```bash
+cd QFieldCloud
+```
 ### Step 2: Edit the `.env` File
 When the script stops after opening the `.env` file, update the environment variables as needed. After you're done editing, save the file and exit nano by pressing Ctrl + X, followed by Y and Enter.
 
