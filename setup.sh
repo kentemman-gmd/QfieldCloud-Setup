@@ -21,13 +21,13 @@ echo \
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
-# Install Docker Compose (optional if needed)
+# Install Docker Compose
 sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-# Step 1: Clone the repository with submodules
-echo "Cloning the repository..."
-sudo git clone --recurse-submodules https://github.com/opengisch/QFieldCloud.git
+# Step 1: Clone the specific release of QFieldCloud
+echo "Cloning QFieldCloud v0.32.3..."
+sudo git clone --branch v0.32.3 --recurse-submodules https://github.com/opengisch/QFieldCloud.git
 cd QFieldCloud
 
 # Step 2: Pull the latest changes and update submodules
@@ -42,4 +42,8 @@ sudo cp .env.example .env
 echo "Opening .env file in nano for editing..."
 sudo nano .env
 
-# Script will stop here, allowing you to edit the .env file manually.
+# Step 5: Start the QFieldCloud Docker containers
+echo "Starting QFieldCloud services..."
+sudo docker-compose up -d
+
+echo "QFieldCloud setup is complete!"
