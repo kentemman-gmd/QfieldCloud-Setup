@@ -42,8 +42,24 @@ sudo cp .env.example .env
 echo "Opening .env file in nano for editing..."
 sudo nano .env
 
-# Step 5: Start the QFieldCloud Docker containers
-echo "Starting QFieldCloud services..."
-sudo docker-compose up -d
+# Step 5: Build and start QFieldCloud services
+echo "Building and starting QFieldCloud services..."
+sudo docker compose up -d --build
 
-echo "QFieldCloud setup is complete!"
+# Step 6: Run database migrations
+echo "Running database migrations..."
+sudo docker compose exec app python manage.py migrate
+
+# Step 7: Collect static files
+echo "Collecting static files..."
+sudo docker compose run app python manage.py collectstatic --noinput
+
+# Step 8: Check app status
+echo "Checking app status..."
+sudo docker compose exec app python manage.py status
+
+# Step 9: Create superuser
+echo "Creating superuser..."
+sudo docker compose run app python manage.py createsuperuser --username kentemman --email super@user.com
+
+echo "QFieldCloud setup is complete! 🎉"
